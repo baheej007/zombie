@@ -5,8 +5,6 @@ import random
 pg.init() 
 
 screen = pg.display.set_mode((1370,600))
-pg.display.set_caption("Zombie Game") 
-pg.display.set_icon(zombie_image)
 
 bg= pg.image.load('bg.jpg')
 bg=pg.transform.scale(bg, (1370,600))
@@ -17,6 +15,8 @@ gun_image = pg.transform.scale(gun_image, (80,80))
 bullet_image = pg.image.load('bullet.png') 
 bullet_image = pg.transform.scale(bullet_image, (20, 10))
 
+pg.display.set_caption("Zombie Game") 
+pg.display.set_icon(zombie_image)
 def create_zombie():
     return [random.randint(1300//2, 1370 - 50), random.randint(50, 600 - 50)]
 zombies = [create_zombie() for _ in range(5)]
